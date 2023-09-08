@@ -46,6 +46,12 @@ For now the options in ``\Magento\Setup\Model\SearchConfigOptionsList::getAvaila
 
 ``\Magento\Setup\Model\SearchConfigOptionsList::getOptionsList`` also needs to be made extensible by di.
 
+### NEXT STEPS
+
+- [ ] Execute Test Suites and see if affected Tests work
+- [ ] Make ``SearchConfigOptionsList`` configurable through di
+- [ ] Configure ``SearchConfigOptionsList`` for elasticsearch 7/8 and opensearch modules
+
 ---
 <p align="center">
 <a href="https://www.codetriage.com/magento/magento2"><img src="https://www.codetriage.com/magento/magento2/badges/users.svg" alt="Open Source Helpers" /></a>
