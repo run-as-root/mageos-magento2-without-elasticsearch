@@ -1,4 +1,39 @@
+## ABOUT THIS FORK
 
+This fork is removing all dependencies for elasticsearch and opensearch.  
+It removes elasticsearch, elasticsearch7 and opensearch modules from the codebase.  
+As areplacement the module [swissup/module-search-mysql-legacy](https://github.com/swissup/module-search-mysql-legacy) is added,
+which contains and adapted version of the latest mysql search implementation from Magento 2.3.7.  
+
+In addition to that, all references and usages of elasticsearch are removed in this fork.  
+
+The fork has been tested with the [mage-os / sample-data](https://github.com/mage-os/mageos-magento2-sample-data), 
+both during `install` and `setup:upgrade`.
+
+There is one Test that has a hard requirement for an elasticsearch class:
+`app/code/Magento/CatalogSearch/Test/Unit/Model/Indexer/FulltextTest.php`  
+
+There is other places where elasticsearch is used for naming:  
+- Mftf Tests (are being used?)
+- Integration Tests
+- api-functional
+- phpcpd
+
+References to elasticsearch which are deemed relevant have not (yet) been removed.
+
+### Notes
+
+Test ``dev/tests/integration/testsuite/Magento/Catalog/Model/Layer/Filter/Price/AlgorithmBaseTest.php`` 
+has some references to elasticsearch but seems to also have other missing dependencies.
+
+``setup/src/Magento/Setup/Model/SearchConfigOptionsList.php`` should be made configurable to get available search-engines, 
+using di.xml fromn the modules that are installed.  
+Module ``magento/module-elasticsearch`` should contain the options to select elasticsearch during install process.  
+For now the options in ``\Magento\Setup\Model\SearchConfigOptionsList::getAvailableSearchEngineList`` have been disabled.
+
+``\Magento\Setup\Model\SearchConfigOptionsList::getOptionsList`` also needs to be made extensible by di.
+
+---
 <p align="center">
 <a href="https://www.codetriage.com/magento/magento2"><img src="https://www.codetriage.com/magento/magento2/badges/users.svg" alt="Open Source Helpers" /></a>
 <a href="https://gitter.im/magento/magento2?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Gitter" /></a> <a href="https://crowdin.com/project/magento-2"><img src="https://d322cqt584bo4o.cloudfront.net/magento-2/localized.svg" alt="Crowdin" /></a><br/>
