@@ -2,8 +2,8 @@
 
 This fork is removing all dependencies for elasticsearch and opensearch.  
 It removes elasticsearch, elasticsearch7 and opensearch modules from the codebase.  
-As areplacement the module [swissup/module-search-mysql-legacy](https://github.com/swissup/module-search-mysql-legacy) is added,
-which contains and adapted version of the latest mysql search implementation from Magento 2.3.7.  
+As a replacement the module [swissup/module-search-mysql-legacy](https://github.com/swissup/module-search-mysql-legacy) is added,
+which contains an adapted version of the latest mysql search implementation from Magento 2.3.7.  
 
 In addition to that, all references and usages of elasticsearch are removed in this fork.  
 
