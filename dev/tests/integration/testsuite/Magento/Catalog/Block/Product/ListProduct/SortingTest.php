@@ -382,26 +382,6 @@ class SortingTest extends TestCase
     }
 
     /**
-     * Test product list ordered by price with out-of-stock configurable product options with elasticsearch engine
-     *
-     * @magentoDataFixture Magento/Catalog/_files/products_with_not_empty_layered_navigation_attribute.php
-     * @magentoDataFixture Magento/Framework/Search/_files/product_configurable_with_out-of-stock_child.php
-     * @magentoConfigFixture current_store cataloginventory/options/show_out_of_stock 1
-     * @dataProvider productListWithOutOfStockSortOrderDataProvider
-     * @param string $sortBy
-     * @param string $direction
-     * @param array $expected
-     * @return void
-     */
-    public function testProductListOutOfStockSortOrderWithElasticsearch(
-        string $sortBy,
-        string $direction,
-        array $expected
-    ): void {
-        $this->assertProductListSortOrderWithConfig($sortBy, $direction, $expected);
-    }
-
-    /**
      * Test product list ordered by price with out-of-stock configurable product options with mysql search engine
      *
      * @magentoDataFixture Magento/Catalog/_files/products_with_not_empty_layered_navigation_attribute.php
