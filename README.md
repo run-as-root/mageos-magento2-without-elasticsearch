@@ -7,6 +7,19 @@ which contains an adapted version of the latest mysql search implementation from
 
 In addition to that, all references and usages of elasticsearch are removed in this fork.  
 
+### Main Changes 
+
+- include swissup/module-search-mysql-legacy
+- remove modules
+  - magento/module-elasticsearch
+  - magento/module-elasticsearch7
+  - magento/module-opensearch
+  - elasticsearch/elasticsearch from root composer.json
+- cleanup ``SearchConfigOptionsList`` so options are removed from CLI setup:install
+- dev/tests modifications
+
+### Tests
+
 The fork has been tested with the [mage-os / sample-data](https://github.com/mage-os/mageos-magento2-sample-data), 
 both during `install` and `setup:upgrade`.
 
