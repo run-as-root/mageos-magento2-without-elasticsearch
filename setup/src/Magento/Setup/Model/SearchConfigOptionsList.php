@@ -46,6 +46,9 @@ class SearchConfigOptionsList
      */
     public function getOptionsList(): array
     {
+        /**
+         * @todo this should be extensible through di, coming from the respective module that defines it
+         */
         return [
             new SelectConfigOption(
                 self::INPUT_KEY_SEARCH_ENGINE,
@@ -148,10 +151,14 @@ class SearchConfigOptionsList
      */
     public function getAvailableSearchEngineList(): array
     {
+        /**
+         * @todo this should be extensible through di, coming from the respective module that defines it
+         */
         return [
-            'elasticsearch7' => 'Elasticsearch 7.x (deprecated)',
-            'elasticsearch8' => 'Elasticsearch 8.x',
-            'opensearch' => 'OpenSearch'
+            '' => '',
+//            'elasticsearch7' => 'Elasticsearch 7.x (deprecated)',
+//            'elasticsearch8' => 'Elasticsearch 8.x',
+//            'opensearch' => 'OpenSearch'
         ];
     }
 }
